@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Cristiano Arsenia Novele</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f5f7fa;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        header {
+            width: 100%;
+            background-color: #0b1f3a;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 23px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #2f8cff;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .menu a {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #4da3ff;
+        }
+
+        #inicio {
+            min-height: 90vh;
+            background: linear-gradient(120deg, #081a31, #0e3158);
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .inicio-container {
+            width: 1200px;
+            max-width: 90%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 70px;
+        }
+
+        .inicio-texto {
+            max-width: 720px;
+        }
+
+        .inicio-pequeno {
+            color: #4da3ff;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .inicio-texto h1 {
+            font-size: 52px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .inicio-texto h1 span {
+            color: #4da3ff;
+        }
+
+        .inicio-texto h2 {
+            font-size: 22px;
+            font-weight: normal;
+            color: #d6e1ee;
+            margin-bottom: 25px;
+        }
+
+        .inicio-texto p {
+            color: #c5d3e2;
+            font-size: 17px;
+            max-width: 650px;
+            margin-bottom: 35px;
+        }
+
+        .botoes {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .botao,
+        .botao-secundario {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .botao {
+            background-color: #2f8cff;
+            color: #fff;
+        }
+
+        .botao:hover {
+            background-color: #fff;
+            color: #0b1f3a;
+        }
+
+        .botao-secundario {
+            border: 1px solid #6283a5;
+            color: #fff;
+        }
+
+        .botao-secundario:hover {
+            background-color: #fff;
+            color: #0b1f3a;
+        }
+
+        .foto-container {
+            width: 290px;
+            height: 290px;
+            min-width: 290px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #2f8cff;
+            background-color: #fff;
+            box-shadow: 0 0 0 10px rgba(47,140,255,0.08),
+                        0 15px 50px rgba(0,0,0,0.25);
+        }
+
+        .foto-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        section {
+            padding: 90px 30px;
+        }
+
+        .secao {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .titulo h2 {
+            font-size: 35px;
+            color: #0b1f3a;
+            margin-bottom: 12px;
+        }
+
+        .titulo-linha {
+            width: 55px;
+            height: 4px;
+            background-color: #2f8cff;
+            margin: auto;
+        }
+
+        .titulo p {
+            margin-top: 15px;
+            color: #64748b;
+        }
+
+        #sobre,
+        #formacao,
+        #projetos,
+        #contactos {
+            background-color: #fff;
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .sobre-texto h3 {
+            color: #0b1f3a;
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .sobre-texto p {
+            color: #56657a;
+            margin-bottom: 17px;
+            font-size: 16px;
+        }
+
+        .destaque {
+            border-left: 4px solid #2f8cff;
+            padding: 20px 25px;
+            background-color: #f2f6fb;
+        }
+
+        .destaque p {
+            color: #26364d;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        #objetivo {
+            background-color: #eef3f8;
+        }
+
+        .objetivo-conteudo {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .objetivo-conteudo p {
+            color: #536176;
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+        .frase-impacto {
+            margin-top: 35px;
+            padding: 35px;
+            background-color: #0b1f3a;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .frase-impacto h3 {
+            color: #fff;
+            font-size: 29px;
+            margin-bottom: 10px;
+        }
+
+        .frase-impacto p {
+            color: #4da3ff;
+            font-size: 18px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .formacao-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .formacao-card {
+            background-color: #fcfdfc;
+            border: 1px solid #e2f0e6;
+            padding: 30px 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .formacao-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(15, 70, 32, 0.1);
+        }
+
+        .logo-escola {
+            width: 105px;
+            height: 105px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            border: 2px solid #dce5ef;
+            background-color: #f7fcf9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-escola img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+        }
+
+        .formacao-card h3 {
+            color: #0b3a12;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .formacao-card p {
+            color: #68778b;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        #competencias {
+            background-color: #f8fafc;
+        }
+
+        .competencias-intro {
+            max-width: 750px;
+            margin: -25px auto 55px;
+            text-align: center;
+            color: #64748b;
+            font-size: 16px;
+        }
+
+        .subtitulo {
+            color: #0b1f3a;
+            font-size: 24px;
+            margin-bottom: 35px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #dbe3ec;
+            position: relative;
+        }
+
+        .subtitulo::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 70px;
+            height: 3px;
+            background-color: #2f8cff;
+        }
+
+        .competencias-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 70px;
+            row-gap: 38px;
+            margin-bottom: 65px;
+        }
+
+        .competencia {
+            position: relative;
+            padding: 0 0 22px;
+            background: transparent;
+            border: none;
+            transition: 0.3s ease;
+        }
+
+        .competencia:hover {
+            transform: translateX(5px);
+        }
+
+        .competencia-numero {
+            display: inline-block;
+            color: #2f8cff;
+            font-size: 13px;
+            font-weight: bold;
+            margin-right: 10px;
+            letter-spacing: 1px;
+        }
+
+        .competencia h4 {
+            display: inline-block;
+            color: #0b1f3a;
+            font-size: 18px;
+            margin-bottom: 9px;
+        }
+
+        .competencia p {
+            color: #66758a;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .competencia::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #dbe3ec;
+        }
+
+        .competencia-destaque {
+            display: inline-block;
+            color: #2f8cff;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        #projetos {
+            background-color: #fff;
+        }
+
+        .projetos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .projeto {
+            border: 1px solid #e1e7ee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .projeto:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(15, 70, 23, 0.1);
+        }
+
+        .projeto-imagem {
+            height: 190px;
+            background-color: #e8eef5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #718096;
+            font-size: 14px;
+            overflow: hidden;
+        }
+
+        .projeto-imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .projeto-conteudo {
+            padding: 25px;
+        }
+
+        .projeto-conteudo h3 {
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .projeto-conteudo p {
+            color: #65748a;
+            font-size: 14px;
+        }
+
+        .btn-projeto {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 10px 18px;
+            background-color: #2f8cff;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .btn-projeto:hover {
+            background-color: #0b1f3a;
+        }
+
+        /* VISÃO DE FUTURO */
+
+        #visao {
+            background: linear-gradient(135deg, #07172b, #0b2d50);
+            color: #fff;
+        }
+
+        #visao .titulo {
+            margin-bottom: 60px;
+        }
+
+        #visao .titulo h2 {
+            color: #fff;
+        }
+
+        #visao .titulo p {
+            color: #aebed0;
+        }
+
+        .visao-conteudo {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .visao-principal {
+            border-left: 4px solid #2f8cff;
+            padding-left: 30px;
+        }
+
+        .visao-principal h3 {
+            font-size: 30px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .visao-principal p {
+            color: #cbd8e6;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .visao-cards {
+            display: grid;
+            gap: 15px;
+        }
+
+        .visao-card {
+            background-color: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            padding: 22px;
+            border-radius: 10px;
+            transition: 0.3s ease;
+        }
+
+        .visao-card:hover {
+            background-color: #fff;
+            transform: translateX(6px);
+        }
+
+        .visao-card h4 {
+            color: #4da3ff;
+            font-size: 17px;
+            margin-bottom: 7px;
+        }
+
+        .visao-card p {
+            color: #cbd8e6;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .visao-card:hover h4 {
+            color: #0b1f3a;
+        }
+
+        .visao-card:hover p {
+            color: #536176;
+        }
+
+        .visao-areas {
+            margin-top: 55px;
+        }
+
+        .visao-areas h3 {
+            text-align: center;
+            color: #fff;
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        .areas-futuras {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .area {
+            padding: 11px 18px;
+            border: 1px solid #3f6286;
+            border-radius: 30px;
+            color: #dce8f5;
+            background-color: rgba(255,255,255,0.04);
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        .area:hover {
+            background-color: #2f8cff;
+            border-color: #2f8cff;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+
+        .contactos-layout {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 45px;
+            align-items: start;
+        }
+
+        .contactos-info h3 {
+            color: #0b1f3a;
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .contactos-info > p {
+            color: #66758a;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contactos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .contacto {
+            padding: 18px;
+            border: 1px solid #e1e7ee;
+            border-radius: 8px;
+            background-color: #fafbfd;
+            transition: 0.3s;
+        }
+
+        .contacto:hover {
+            border-color: #b9d8fa;
+            transform: translateX(4px);
+        }
+
+        .contacto strong {
+            display: block;
+            color: #0b1f3a;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
+        .contacto span {
+            color: #65748a;
+            font-size: 14px;
+        }
+
+        .formulario {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(15,40,70,0.06);
+        }
+
+        .formulario h3 {
+            color: #0b1f3a;
+            font-size: 24px;
+            margin-bottom: 7px;
+        }
+
+        .formulario-intro {
+            color: #718096;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .campo {
+            margin-bottom: 18px;
+        }
+
+        .campo label {
+            display: block;
+            color: #0b1f3a;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .campo input,
+        .campo textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d7e0ea;
+            border-radius: 6px;
+            background-color: #fff;
+            color: #172033;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .campo input:focus,
+        .campo textarea:focus {
+            border-color: #2f8cff;
+            box-shadow: 0 0 0 3px rgba(47,140,255,0.10);
+        }
+
+        .campo textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .botao-enviar {
+            width: 100%;
+            border: none;
+            padding: 14px;
+            background-color: #0b1f3a;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .botao-enviar:hover {
+            background-color: #2f8cff;
+        }
+
+        footer {
+            background-color: #07172b;
+            color: #aebed0;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer strong {
+            color: #fff;
+        }
+
+        @media (max-width: 900px) {
+            .menu {
+                gap: 13px;
+            }
+
+            .inicio-container {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 70px 0;
+            }
+
+            .botoes {
+                justify-content: center;
+            }
+
+            .inicio-texto h1 {
+                font-size: 40px;
+            }
+
+            .sobre-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .formacao-grid,
+            .competencias-grid,
+            .projetos-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            /* NOVO: VISÃO DE FUTURO NO TABLET */
+
+            .visao-conteudo {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contactos-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .menu {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .inicio-texto h1 {
+                font-size: 32px;
+            }
+
+            .inicio-texto h2 {
+                font-size: 19px;
+            }
+
+            .foto-container {
+                width: 220px;
+                height: 220px;
+                min-width: 220px;
+            }
+
+            .galeria-grid,
+            .contactos-grid,
+            .formacao-grid,
+            .competencias-grid,
+            .projetos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 65px 20px;
+            }
+
+            .formulario {
+                padding: 22px;
+            }
+
+            /* NOVO: VISÃO DE FUTURO NO TELEMÓVEL */
+
+            .visao-principal {
+                padding-left: 20px;
+            }
+
+            .visao-principal h3 {
+                font-size: 25px;
+            }
+
+            .visao-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Cristiano<span>.</span></div>
+
+        <ul class="menu">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre Mim</a></li>
+            <li><a href="#objetivo">Objetivo</a></li>
+            <li><a href="#formacao">Formação</a></li>
+            <li><a href="#competencias">Competências</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contactos">Contactos</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="inicio">
+    <div class="inicio-container">
+
+        <div class="inicio-texto">
+
+            <div class="inicio-pequeno">
+                Portfólio pessoal
+            </div>
+
+            <h1>
+                Cristiano Novele
+            </h1>
+
+            <h2>
+                Estudante de Suporte Informático
+            </h2>
+
+            <p>
+                Sou estudante do Instituto de Transportes e Comunicações,
+                com formação em Eletricidade Industrial e em progreso Suporte Informático,
+                acaminho de desenvolver conhecimentos em Programação de Sites Web.
+            </p>
+
+            <div class="botoes">
+                <a href="#sobre" class="botao">
+                    Conhecer o meu percurso
+                </a>
+
+                <a href="#contactos" class="botao-secundario">
+                    Contactar
+                </a>
+            </div>
+
+        </div>
+
+        <div class="foto-container">
+            <img src="Foto.jpg" alt="Foto de Cristiano Arsenia Novele">
+        </div>
+
+    </div>
+</section>
+
+<section id="sobre">
+    <div class="secao">
+
+        <div class="titulo">
+            <h2>Sobre Mim</h2>
+            <div class="titulo-linha"></div>
+            <p>Conhecer, compreender e aprender</p>
+        </div>
+
+        <div class="sobre-grid">
+
+            <div class="sobre-texto">
+
+                <h3>
+                    Curiosidade que me leva a aprender
+                </h3>
+
+                <p>
+                    Sou uma pessoa calma, comunicativa, responsável e extrovertida.
+                    Gosto de trabalhar com outras pessoas, aprender coisas novas
+                    e enfrentar desafios.
+                </p>
+
+                <p>
+                    Uma das coisas que mais me interessa na área de informática
+                    é descobrir como as coisas funcionam. Tenho particular
+                    curiosidade em compreender o funcionamento dos sistemas
+                    operativos e aquilo que acontece por trás das ferramentas
+                    que usamos diariamente.
+                </p>
+
+                <p>
+                    Quando encontro um problema que ainda não sei resolver,
+                    procuro informação, estudo diferentes soluções e tento
+                    compreender como chegar ao resultado.
+                </p>
+
+            </div>
+
+            <div class="destaque">
+
+                <p>
+                    “A curiosidade de saber como as coisas funcionam é uma das
+                    razões que me aproxima cada vez mais da tecnologia.”
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="objetivo">
+    <div class="secao">
+
+        <div class="titulo">
+            <h2>Meu Objetivo</h2>
+            <div class="titulo-linha"></div>
+            <p>Mais do que uma profissão, uma visão</p>
+        </div>
+
+        <div class="objetivo-conteudo">
+
+            <p>
+                O meu principal objetivo não é simplesmente tornar-me programador.
+                Quero utilizar os conhecimentos que estou a adquirir para construir algo maior.
+            </p>
+
+            <p>
+                No futuro, pretendo criar uma empresa ligada à tecnologia, capaz
+                de desenvolver soluções digitais para problemas reais.
+            </p>
+
+            <p>
+                Quero trabalhar no desenvolvimento de sites, sistemas, soluções
+                baseadas em Inteligência Artificial, redes e consultoria informática.
+            </p>
+
+            <p>
+                Acredito que a tecnologia deve servir para resolver problemas
+                e melhorar a forma como as pessoas vivem, trabalham e comunicam.
+            </p>
+
+            <div class="frase-impacto">
+
+                <h3>
+                    Não quero apenas acompanhar o futuro da tecnologia.
+                </h3>
+
+                <p>
+                    Quero ajudar a construí-lo.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="formacao">
+    <div class="secao">
+
+        <div class="titulo">
+            <h2>Formação</h2>
+            <div class="titulo-linha"></div>
+            <p>O meu percurso académico</p>
+        </div>
+
+        <div class="formacao-grid">
+
+            <div class="formacao-card">
+
+                <div class="logo-escola">
+                    <img src="Colegio.jpeg"
+                         alt="Logo do Colégio Adventista da Liberdade">
+                </div>
+
+                <h3>
+                    Colégio Adventista da Liberdade
+                </h3>
+
+                <p>
+                    Ensino Secundário
+                </p>
+
+            </div>
+
+            <div class="formacao-card">
+
+                <div class="logo-escola">
+                    <img src="ITC.jpeg"
+                         alt="Logo do ITC">
+                </div>
+
+                <h3>
+                    Instituto de Transportes e Comunicações
+                </h3>
+
+                <p>
+                    CV3 — Eletricidade Industrial
+                </p>
+
+                <p>
+                    CV4 — Suporte Informático (Em progreso)
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="competencias">
+    <div class="secao">
+
+        <div class="titulo">
+            <h2>Competências</h2>
+            <div class="titulo-linha"></div>
+            <p>Conhecimentos técnicos e capacidades pessoais</p>
+        </div>
+
+        <p class="competencias-intro">
+            Competências que tenho desenvolvido através da minha formação,
+            trabalhos práticos, pesquisa e experiências de aprendizagem na área da tecnologia.
+        </p>
+
+        <h3 class="subtitulo">
+            Competências Técnicas
+        </h3>
+
+        <div class="competencias-grid">
+
+            <div class="competencia">
+                <div class="competencia-numero">01</div>
+                <h4>Desenvolvimento Web</h4>
+
+                <p>
+                    Conhecimentos na estruturação e desenvolvimento de páginas web,
+                    utilizando tecnologias e conceitos aprendidos durante a formação.
+                </p>
+
+                <div class="competencia-destaque">
+                    Tecnologia
+                </div>
+            </div>
+
+            <div class="competencia">
+                <div class="competencia-numero">02</div>
+                <h4>Sistemas Operativos</h4>
+
+                <p>
+                    Interesse e conhecimentos sobre o funcionamento dos sistemas
+                    operativos, os seus componentes e a interação entre software e hardware.
+                </p>
+
+                <div class="competencia-destaque">
+                    Sistemas
+                </div>
+            </div>
+
+            <div class="competencia">
+                <div class="competencia-numero">03</div>
+                <h4>Suporte Informático</h4>
+
+                <p>
+                    Conhecimentos relacionados com computadores, software,
+                    manutenção básica e identificação e resolução de problemas informáticos.
+                </p>
+
+                <div class="competencia-destaque">
+                    Suporte
+                </div>
+            </div>
+
+            <div class="competencia">
+                <div class="competencia-numero">04</div>
+                <h4>Redes Informáticas</h4>
+
+                <p>
+                    Conhecimentos fundamentais de redes e interesse em compreender
+                    e resolver problemas relacionados com conectividade e comunicação.
+                </p>
+
+                <div class="competencia-destaque">
+                    Redes
+                </div>
+            </div>
+
+            <div class="competencia">
+                <div class="competencia-numero">05</div>
+                <h4>Eletricidade Industrial</h4>
+
+                <p>
+                    Conhecimentos adquiridos durante a formação em Eletricidade
+                    Industrial, incluindo circuitos, instalações e trabalhos práticos.
+                </p>
+
+                <div class="competencia-destaque">
+                    Formação
+                </div>
+            </div>
+
+            <div class="competencia">
+                <div class="competencia-numero">06</div>
+                <h4>Resolução de Problemas</h4>
+
+                <p>
+                    Capacidade de pesquisar, analisar diferentes possibilidades
+                    e testar soluções para problemas técnicos.
+                </p>
+
+                <div class="competencia-destaque">
+                    Análise
+                </div>
+            </div>
+
+        </div>
+
+        <h3 class="subtitulo">
+            Competências Pessoais
+        </h3>
+
+        <div class="competencias-grid">
+
+            <div class="competencia">
+                <div class="competencia-numero">01</div>
+                <h4>Comunicação</h4>
+
+                <p>
+                    Capacidade de comunicar ideias, interagir com diferentes
+                    pessoas e participar de atividades realizadas em equipa.
+                </p>
+
+                <div class="competencia-destaque">
+                    Interação
+                </div>
+            </div>
+
+            <div class="competencia">
+                <div class="competencia-numero">02</div>
+                <h4>Responsabilidade</h4>
+
+                <p>
+                    Procuro cumprir as tarefas que me são atribuídas e assumir
+                    responsabilidade pelos resultados do meu trabalho.
+                </p>
+
+                <div class="competencia-destaque">
+                    Compromisso
+                </div>
+            </div>
+
+            <div class="competencia">
+                <div class="competencia-numero">03</div>
+                <h4>Determinação</h4>
+
+                <p>
+                    Procuro continuar a trabalhar mesmo quando encontro dificuldades,
+                    utilizando os erros como oportunidades de aprendizagem.
+                </p>
+
+                <div class="competencia-destaque">
+                    Persistência
+                </div>
+            </div>
+
+            <div class="competencia">
+                <div class="competencia-numero">04</div>
+                <h4>Pensamento Crítico</h4>
+
+                <p>
+                    Procuro compreender um problema antes de escolher uma solução
+                    e comparar diferentes possibilidades para chegar a um resultado melhor.
+                </p>
+
+                <div class="competencia-destaque">
+                    Análise
+                </div>
+            </div>
+
+            <div class="competencia">
+                <div class="competencia-numero">05</div>
+                <h4>Trabalho em Equipa</h4>
+
+                <p>
+                    Valorizo a colaboração, a comunicação e a divisão de
+                    responsabilidades durante a realização de trabalhos.
+                </p>
+
+                <div class="competencia-destaque">
+                    Colaboração
+                </div>
+            </div>
+
+            <div class="competencia">
+                <div class="competencia-numero">06</div>
+                <h4>Aprendizagem Contínua</h4>
+
+                <p>
+                    Tenho interesse em aprender novas ferramentas, tecnologias
+                    e métodos para melhorar continuamente os meus conhecimentos.
+                </p>
+
+                <div class="competencia-destaque">
+                    Evolução
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="projetos">
+    <div class="secao">
+
+        <div class="titulo">
+            <h2>Projetos e Trabalhos</h2>
+            <div class="titulo-linha"></div>
+            <p>Trabalhos realizados durante a minha formação</p>
+        </div>
+
+        <div class="projetos-grid">
+
+            <div class="projeto">
+
+                <div class="projeto-imagem">
+                    BolsaFácil
+                </div>
+
+                <div class="projeto-conteudo">
+
+                    <h3>
+                        BolsaFácil
+                    </h3>
+
+                    <p>
+                        Plataforma web criada para facilitar a pesquisa de bolsas
+                        de estudo e oportunidades académicas.
+                    </p>
+
+                   <a href="https://cristianonovela358-ux.github.io/Bolsa/"
+   target="_blank" class="btn-projeto">Ver Projeto</a>
+
+                </div>
+
+            </div>
+
+            <div class="projeto">
+
+                <div class="projeto-imagem">
+                    Relatórios Académicos
+                </div>
+
+                <div class="projeto-conteudo">
+
+                    <h3>
+                        Relatórios do ITC
+                    </h3>
+
+                    <p>
+                        Desenvolvimento de relatórios e trabalhos académicos
+                        durante o percurso de formação.
+                    </p>
+<a href="https://sites.google.com/view/noveletechworld/p%C3%A1gina-inicial?authuser=0"
+   target="_blank"
+   class="btn-projeto">
+    Ver Projeto
+</a>
+                </div>
+
+            </div>
+
+            <div class="projeto">
+
+                <div class="projeto-imagem">
+                    Trabalhos de Eletricidade
+                </div>
+
+                <div class="projeto-conteudo">
+
+                    <h3>
+                        Eletricidade Industrial
+                    </h3>
+
+                    <p>
+                        Trabalhos práticos realizados durante a formação em
+                        Eletricidade Industrial, incluindo instalações e circuitos elétricos.
+                    </p>
+<a href="https://docs.google.com/document/d/1SsIBh015SyLhO921h5EejYzcT4YyfApP/edit?usp=drivesdk&ouid=102857989802482381564&rtpof=true&sd=true"
+   target="_blank"
+   class="btn-projeto">
+    Ver E-book
+</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================
+     VISÃO DE FUTURO — NOVA VERSÃO INTEGRADA
+     ========================================================= -->
+
+<section id="visao">
+
+    <div class="secao">
+
+        <div class="titulo">
+
+            <h2>
+                Visão de Futuro
+            </h2>
+
+            <div class="titulo-linha"></div>
+
+            <p>
+                Onde quero chegar e o que pretendo construir
+            </p>
+
+        </div>
+
+        <div class="visao-conteudo">
+
+            <div class="visao-principal">
+
+                <h3>
+                    Transformar conhecimento em soluções.
+                </h3>
+
+                <p>
+                    Quero continuar a desenvolver os meus conhecimentos
+                    na área da tecnologia, explorando novas ferramentas,
+                    linguagens e formas de resolver problemas.
+                </p>
+
+                <p>
+                    No futuro, pretendo criar uma empresa ligada à tecnologia,
+                    capaz de desenvolver soluções digitais para problemas reais
+                    e contribuir para a transformação digital.
+                </p>
+
+                <p>
+                    Quero crescer profissionalmente, adquirir experiência
+                    e transformar aquilo que estou a aprender hoje em
+                    projetos que possam ter utilidade para outras pessoas
+                    e organizações.
+                </p>
+
+            </div>
+
+            <div class="visao-cards">
+
+                <div class="visao-card">
+
+                    <h4>
+                        01 — Evolução profissional
+                    </h4>
+
+                    <p>
+                        Continuar a estudar, adquirir experiência e
+                        aprofundar os meus conhecimentos em tecnologia.
+                    </p>
+
+                </div>
+
+                <div class="visao-card">
+
+                    <h4>
+                        02 — Criar soluções
+                    </h4>
+
+                    <p>
+                        Desenvolver sites, sistemas e soluções tecnológicas
+                        capazes de responder a problemas reais.
+                    </p>
+
+                </div>
+
+                <div class="visao-card">
+
+                    <h4>
+                        03 — Criar uma empresa
+                    </h4>
+
+                    <p>
+                        No futuro, transformar os meus conhecimentos
+                        numa empresa ligada à tecnologia e inovação.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="visao-areas">
+
+            <h3>
+                Áreas que pretendo explorar
+            </h3>
+
+            <div class="areas-futuras">
+
+                <div class="area">
+                    Desenvolvimento Web
+                </div>
+
+                <div class="area">
+                    Desenvolvimento de Sistemas
+                </div>
+
+                <div class="area">
+                    Inteligência Artificial
+                </div>
+
+                <div class="area">
+                    Redes
+                </div>
+
+                <div class="area">
+                    Consultoria Informática
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section id="contactos">
+
+    <div class="secao">
+
+        <div class="titulo">
+
+            <h2>
+                Contactos
+            </h2>
+
+            <div class="titulo-linha"></div>
+
+            <p>
+                Entre em contacto comigo
+            </p>
+
+        </div>
+
+        <div class="contactos-layout">
+
+            <div class="contactos-info">
+
+                <h3>
+                    Vamos conversar?
+                </h3>
+
+                <p>
+                    Se quiseres entrar em contacto comigo, podes utilizar uma
+                    das opções abaixo ou enviar diretamente uma mensagem através do formulário.
+                </p>
+
+                <div class="contactos-grid">
+
+                    <div class="contacto">
+                        <strong>Email</strong>
+                        <span>
+                            Cristianonovela358@gmail.com
+                        </span>
+                    </div>
+
+                    <div class="contacto">
+                        <strong>Telefone</strong>
+                        <span>
+                            847689520 / 834031991
+                        </span>
+                    </div>
+
+                    <div class="contacto">
+                        <strong>WhatsApp</strong>
+                        <span>
+                            847689520 / 834031991
+                        </span>
+                    </div>
+
+                    <div class="contacto">
+                        <strong>Localização</strong>
+                        <span>
+                            Av. Alto Maé
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="formulario">
+
+                <h3>
+                    Enviar uma mensagem
+                </h3>
+
+                <p class="formulario-intro">
+                    Preencha os campos abaixo e envie a sua mensagem diretamente para o meu email.
+                </p>
+
+                <form action="mailto:Cristianonovela358@gmail.com"
+                      method="post"
+                      enctype="text/plain">
+
+                    <div class="campo">
+
+                        <label for="nome">
+                            Nome
+                        </label>
+
+                        <input type="text"
+                               id="nome"
+                               name="Nome"
+                               placeholder="Digite o seu nome"
+                               required>
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input type="email"
+                               id="email"
+                               name="Email"
+                               placeholder="Digite o seu email"
+                               required>
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="assunto">
+                            Assunto
+                        </label>
+
+                        <input type="text"
+                               id="assunto"
+                               name="Assunto"
+                               placeholder="Digite o assunto da mensagem"
+                               required>
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="mensagem">
+                            Mensagem
+                        </label>
+
+                        <textarea id="mensagem"
+                                  name="Mensagem"
+                                  placeholder="Escreva a sua mensagem..."
+                                  required></textarea>
+
+                    </div>
+
+                    <button type="submit"
+                            class="botao-enviar">
+                        Enviar mensagem
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 <strong>Cristiano Arsenia Novele</strong>
+    </p>
+
+    <p>
+        Portfólio | Programação de Sites Web
+    </p>
+
+</footer>
+
+</body>
+</html>
